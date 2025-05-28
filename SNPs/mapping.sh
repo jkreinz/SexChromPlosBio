@@ -18,3 +18,6 @@ java -Xmx15G -Djava.io.tmpdir=~/tmp -jar $picard MarkDuplicates I=${prefix}_${re
 
 #4. index bam
 samtools index -@ $threads ${prefix}_${refout}.dd.bam
+
+
+#note: to investigate the effect of multimapping on sex linkage, we used the command `samtools view -F 0x904` on the resulting index, deduped bam files to pull out non-multi-mapping reads and rerun snp calling on sex linked regions with this filter bam
