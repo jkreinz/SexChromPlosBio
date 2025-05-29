@@ -6,11 +6,12 @@ Comprehensive genomic analysis of sex chromosome evolution in *Amaranthus tuberc
 ## Data Availability
 
 ### Analysis Scripts (GitHub)
-All R analysis scripts are available in this repository under `scripts/`.
+All scripts used to process and plot all figures (main and sup) are available in this repository under `scripts/r`.
+Data corresponding to these scripts are linked and detailed below in the Data section. 
 
-Several scripts related to mapping read, calling SNPs, and assembling genomes are also available.
+Several scripts related to mapping read, calling SNPs, and assembling genomes are also available in `scripts/bash`.
 
-### Research Data (Zenodo)
+### Data (Zenodo)
 Complete dataset organized by analysis type:
 **[![DOI](https://zenodo.org/badge/DOI/YOUR_DOI_HERE.svg)](https://doi.org/YOUR_DOI_HERE)**
 
@@ -23,6 +24,8 @@ data_by_script/
 ├── 04_Depth/         # Sequencing depth matrices
 ├── 05_Phylogenetic/  # Phylogenetic trees and metadata
 └── 06_Recombination/ # Recombination rate data
+
+PLOS Bio also requires deposition of the numeric values underlying each plot, and those are available as well in the Zenodo archive in the folder `figure_data_export/`. The only exception to this is juicebox plots of the Hi-C maps and GENESPACE plots of synteny. We are not able to provide scripts for the former since these were manually curated, however, one can reproduce all GENESPACE plots with the scripts provided.  
 
 ## Quick Start
 
@@ -51,9 +54,5 @@ source("scripts/03_PCA_Structure_Analyses.R")    # Uses data_by_script/03_PCA/
 source("scripts/04_Depth_Based_Analyses.R")      # Uses data_by_script/04_Depth/
 source("scripts/05_Phylogenetic_Analysis.R")     # Uses data_by_script/05_Phylogenetic/
 source("scripts/06_Recombination_Analysis.R")    # Uses data_by_script/06_Recombination/
-
-#Also review bash scripts for mapping reads, calling SNPs, and assembling genomes.
-
-
 
 ```
