@@ -16,14 +16,16 @@ Complete dataset organized by analysis type:
 **[![DOI](https://zenodo.org/badge/DOI/YOUR_DOI_HERE.svg)](https://doi.org/YOUR_DOI_HERE)**
 
 The Zenodo archive contains a `data_by_script/` folder with:
-
+```text
 data_by_script/
+
 ├── 01_GWAS/           # GWAS and population genetics data
 ├── 02_Comparative/    # GENESPACE comparative genomics data
 ├── 03_PCA/           # PCA results for inversions
 ├── 04_Depth/         # Sequencing depth matrices
 ├── 05_Phylogenetic/  # Phylogenetic trees and metadata
 └── 06_Recombination/ # Recombination rate data
+```
 
 PLOS Bio also requires deposition of the numeric values underlying each plot, and those are available as well in the Zenodo archive in the folder `figure_data_export/`. The only exception to this is juicebox plots of the Hi-C maps and GENESPACE plots of synteny. We are not able to provide scripts for the former since these were manually curated, however, one can reproduce all GENESPACE plots with the scripts provided.  
 
