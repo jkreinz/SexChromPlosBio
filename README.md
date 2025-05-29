@@ -38,9 +38,6 @@ unzip data_by_script.zip
 
 ### 2. Set up environment
 ```
-# Install required packages
-source("config/requirements.R")
-
 # Update file paths to point to your downloaded data
 source("config/file_paths.R")
 ```
