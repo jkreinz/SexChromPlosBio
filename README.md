@@ -12,22 +12,22 @@ Data corresponding to these scripts are linked and detailed below in the Data se
 Several scripts related to mapping read, calling SNPs, and assembling genomes are also available in `scripts/bash`.
 
 ### Data (Zenodo)
-Complete dataset organized by analysis type:
+Datasets required to reproduce figures and related analyses are organized by analysis type:
 **[![DOI](https://zenodo.org/badge/DOI/YOUR_DOI_HERE.svg)](https://doi.org/YOUR_DOI_HERE)**
 
 The Zenodo archive contains a `data_by_script/` folder with:
 ```text
 data_by_script/
 
-├── 01_GWAS/           # GWAS and population genetics data
-├── 02_Comparative/    # GENESPACE comparative genomics data
+├── 01_GWAS/           # GWAS and stats across the genome
+├── 02_Comparative/    # GENESPACE comparative genomics 
 ├── 03_PCA/           # PCA results for inversions
-├── 04_Depth/         # Sequencing depth matrices
+├── 04_Depth/         # Depth based analyses
 ├── 05_Phylogenetic/  # Phylogenetic trees and metadata
 └── 06_Recombination/ # Recombination rate data
 ```
 
-PLOS Bio also requires deposition of the numeric values underlying each plot, and those are available as well in the Zenodo archive in the folder `figure_data_export/`. The only exception to this is juicebox plots of the Hi-C maps and GENESPACE plots of synteny. We are not able to provide scripts for the former since these were manually curated, however, one can reproduce all GENESPACE plots with the scripts provided.  
+PLOS Bio also requires deposition of the numeric values underlying each plot, and those are available as well in the Zenodo archive in the folder `figure_data_export/`. The only exception to this the plots resulting from GENESPACE and RepeatOBserver analyses, however, one can reproduce these analyses and related plots with the scripts provided.  
 
 ## Quick Start
 
