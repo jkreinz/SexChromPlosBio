@@ -13,7 +13,7 @@ Several scripts related to mapping read, calling SNPs, and assembling genomes ar
 
 ### Data (Zenodo)
 Datasets required to reproduce figures and related analyses are organized by analysis type:
-**[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15556890.svg)](10.5281/zenodo.15556890)**
+**[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15556890.svg)](https://doi.org/10.5281/zenodo.15556890)**
 
 The Zenodo archive contains a `data_by_script/` folder with:
 ```text
