@@ -719,3 +719,41 @@ z2<-ggplot(data=depth_bysex, aes(M/F,fill=targetscaf)) +
 
 library(cowplot)
 plot_grid(z1,z2, rel_widths =c(1,1.3)) #SUP FIGURE 12
+
+
+# ==============================================================================
+# Plot median depth in hemizygous region in herbarium dataset: Sup Figure 20
+# =============================================================================
+
+
+# Read depth data for 100bp windows
+depthmat <- fread("~/allsamples_numericorder_depthsby100bpwind_herbarium_tab.txt")
+samp<-read.table("herborder.txt")
+names(depthmat) <- c("scaf", "start", "end", samp$V1)
+
+# Calculate individual depth statistics for hemizygous region
+# Hemizygous region: 40.5-45 Mb (putative sex chromosome region)
+# Background region: outside 40.5-45 Mb
+ind_means_hemiz <- data.frame(
+  sample = names(depthmat[depthmat$start > 40500000 & depthmat$start < 45000000, -c(1:3)]),
+  # Median depth in hemizygous region (40.5-43.6 Mb)
+  ind_meandepth = miscTools::colMedians(depthmat[depthmat$start > 40500000 & depthmat$start < 43600000, -c(1:3)]),
+  # Median depth in background scaffold regions
+  scaf1depth_ = miscTools::colMedians(depthmat[depthmat$start < 40500000 | depthmat$start > 45000000, -c(1:3)])
+)
+
+ind_means_hemiz$sample<-gsub("HBO","HB0",ind_means_hemiz$sample)
+
+herb_depth<-inner_join(all2[all2$year < 2015,],ind_means_hemiz,by="sample" )
+
+#SUP FIGURE 20
+write.csv(herb_depth, file="figure_data_export/SupFig20_dataset.csv")
+
+herb_depth %>% filter(sex == "F" | sex == "M") %>%
+  ggplot(aes(long,ind_meandepth/scaf1depth_, color=sex)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(y="Median Scaled Depth in Male Hemizygous Region", x="Longitude") +
+  theme_bw()
+
+
