@@ -38,13 +38,7 @@ wget https://zenodo.org/record/YOUR_RECORD/files/data_by_script.zip
 unzip data_by_script.zip
 ```
 
-### 2. Set up environment
-```
-# Update file paths to point to your downloaded data
-source("config/file_paths.R")
-```
-
-### 3. Run Analyses from Zenodo Deposited Datasets
+### 2. Run Analyses from Zenodo Deposited Datasets
 ```
 # Run in order (each script uses its corresponding data folder)
 source("scripts/01_GWAS_PopGen_Analyses.R")      # Uses data_by_script/01_GWAS/
@@ -53,5 +47,4 @@ source("scripts/03_PCA_Structure_Analyses.R")    # Uses data_by_script/03_PCA/
 source("scripts/04_Depth_Based_Analyses.R")      # Uses data_by_script/04_Depth/
 source("scripts/05_Phylogenetic_Analysis.R")     # Uses data_by_script/05_Phylogenetic/
 source("scripts/06_Recombination_Analysis.R")    # Uses data_by_script/06_Recombination/
-
 ```
